@@ -30,7 +30,7 @@ async function main() {
   // Sum fees from each address
   let refunds = []
   txs.forEach(el => {
-    let index = refunds.findIndex(val => val.executor === el.executor)
+    let index = refunds.findIndex(val => val.to === el.executor)
     if(index === -1)
       refunds.push({
         to: el.executor,
